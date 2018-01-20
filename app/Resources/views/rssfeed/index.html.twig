@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Your RSS Feeds</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Url</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rSSFeed in rSSFeeds %}
+            <tr>
+                <td><a href="{{ path('rssfeed_show', { 'slug': rSSFeed.slug }) }}">{{ rSSFeed.name }}</a></td>
+                <td>{{ rSSFeed.url }}</td>
+                <td>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            {% if rSSFeed.created %}<small>Created: <em>{{ rSSFeed.created|date('jS M Y h:ia') }}</em></small><br />{% endif %}
+                            {% if rSSFeed.updated %}<small>Updated: <em>{{ rSSFeed.updated|date('jS M Y h:ia') }}</em></small>{% endif %}
+                        </div>
+                        <div class="col-sm-3">
+                            <a class="btn btn-link" href="{{ path('rssfeed_edit', {'slug': rSSFeed.slug}) }}">Edit</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div>
+        <a class="btn btn-primary" href="{{ path('rssfeed_new') }}">Add RSS Feed</a>
+    </div>
+{% endblock %}

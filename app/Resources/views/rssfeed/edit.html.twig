@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Edit Feed</h1>
+
+    <div class="">
+        {{ form_start(delete_form, {'attr': {'class': 'justify-content-end d-flex'}}) }}
+        <input class="btn btn-link" type="submit" value="Delete">
+        {{ form_end(delete_form) }}
+    </div>
+
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    <input class="btn btn-primary" type="submit" value="Save" />
+    <a class="btn btn-secondary" href="{{ path('rssfeed_index') }}">Cancel</a>
+
+    {{ form_end(edit_form) }}
+
+{% endblock %}

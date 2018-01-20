@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ rSSFeed.name }}</h1>
+
+    <div class="row">
+        <div class="col-sm">
+            <p><a href="{{ feed.link }}">{{ feed.link }}</a></p>
+            <p><small>{{ feed.lastModified|date('jS M Y h:ia') }}</small></p>
+        </div>
+        <div class="col-sm">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('rssfeed_index') }}">Back to the list</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('rssfeed_edit', { 'slug': rSSFeed.slug }) }}">Edit</a>
+                </li>
+                <li class="nav-item">
+                    {{ form_start(delete_form) }}
+                    <input class="btn btn-link " type="submit" value="Delete">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    {% for item in feed %}
+
+        <div class="card my-4">
+            <div class="card-body">
+                <h4 class="card-title">{{ item.title }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">{{ item.lastModified|date('jS M Y') }}</h6>
+                <p class="card-text">{{ item.description|striptags }}</p>
+                <a href="{{ item.link }}" class="card-link">{{ item.link }}</a>
+            </div>
+        </div>
+
+    {% endfor %}
+{% endblock %}

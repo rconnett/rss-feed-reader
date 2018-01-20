@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Add Feed</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input class="btn btn-primary" type="submit" value="Save" />
+    <a class="btn btn-secondary" href="{{ path('rssfeed_index') }}">Cancel</a>
+    {{ form_end(form) }}
+
+{% endblock %}
