@@ -1,5 +1,10 @@
-richardc-jadu-rss-app
-=====================
+# RSS Feed Reader
 
-A Symfony project created on January 17, 2018, 2:44 pm.
-# rss-feed-reeder
+This is a Symfony 3 based RSS feed reader web app.
+
+For installation information please see [instructions.md](./instructions.md)
+
+License
+----
+
+MIT
