@@ -18,15 +18,15 @@ $ git clone git@github.com:rconnett/rss-feed-reader.git
 # Change into the new directory
 $ cd rss-feed-reader
 
-# Check that your machine has the necessary requirements
-$ php bin/symfony_requirements
-
 # Install all the dependencies and configure
 # Towards the end of the install you will be asked for your database details
 # The database doesn't need to exist but the user and password should be able
 # to connect to the database server and if necessary have create rights for
 # the next step.
 $ composer install
+
+# Check that your machine has the necessary requirements
+$ php bin/symfony_requirements
 
 # If your database doesn't exist create it with
 $ bin/console doctrine:database:create
