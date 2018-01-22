@@ -46,6 +46,19 @@ Time taken: 30 mins
 
 ## Stage 3 - Main Development Stage
 
+### Files of interest
+
+```
+src/AppBundle/Controller/RSSFeedController.php
+src/AppBundle/Entity/RSSFeed.php
+src/AppBundle/Form/RSSFeedType.php
+
+app/Resources/views/rssfeed/index.html.twig
+app/Resources/views/rssfeed/new.html.twig
+app/Resources/views/rssfeed/edit.html.twig
+app/Resources/views/rssfeed/show.html.twig
+```
+
 I needed to do a request for the actual feed to get the feed items and parse it into something usable.  To do that I looked around for a library that could do that for me.  The one I chose was the debril/rss-atom-bundle bundle.  I added it to the project using composer and did the necessary configuration to get it hooked into the project.
 
 ```bash
